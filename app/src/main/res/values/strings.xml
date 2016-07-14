@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MadFood</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <array name="weight">
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+
+    </array>
+</resources>
