@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/oneDayPlanLinearlayout"
+        android:id="@+id/linear_one_day_plan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -13,26 +13,26 @@
         android:weightSum="2">
 
         <Button
-            android:id="@+id/oneDayPlanAddButton"
+            android:id="@+id/button_one_day_plan_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/button_style"
-            android:text="Add" />
+            android:text="@string/add" />
 
         <Button
-            android:id="@+id/oneDayPlanDeleteButton"
+            android:id="@+id/button_one_day_plan_delete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/button_style"
-            android:text="Delete" />
+            android:text="@string/delete" />
     </LinearLayout>
 
     <ListView
-        android:id="@+id/oneDayPlanListView"
+        android:id="@+id/list_view_one_day_plan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/oneDayPlanLinearlayout"
+        android:layout_above="@+id/linear_one_day_plan"
         android:layout_marginBottom="5dp"></ListView>
 </RelativeLayout>

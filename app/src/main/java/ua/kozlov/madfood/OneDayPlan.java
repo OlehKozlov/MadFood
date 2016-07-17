@@ -5,26 +5,21 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-
 import java.util.ArrayList;
 
-
 public class OneDayPlan {
-    DBHealper dbHealper;
-    SQLiteDatabase db;
+    private DBHealper dbHealper;
+    private SQLiteDatabase db;
     private static ArrayList<String> nameList = new ArrayList<>();
     private static ArrayList<String> weightList = new ArrayList<>();
 
     public OneDayPlan(){
-
     }
 
-    public void setFoodToPlan(Context context, String foodName, String weight, ArrayList<String> parametersList){
+    public void setFoodToPlan(Context context, final String foodName, final String weight, final ArrayList<String> parametersList){
         dbHealper = new DBHealper(context);
         db = dbHealper.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -35,7 +30,6 @@ public class OneDayPlan {
         cv.put("carbonates", parametersList.get(2).toString());
         cv.put("proteins", parametersList.get(3).toString());
         cv.put("gi", parametersList.get(4).toString());
-        // change "today" to real date
         cv.put("date", "today");
         Log.d("mylog", foodName);
         Log.d("mylog", weight);
@@ -81,14 +75,14 @@ public class OneDayPlan {
         return list;
     }
 
-    public View setChoosenFoods(View view, String name, String weight, Context context){
+    public View setChoosenFoods(View view, final String name, final String weight, Context context){
         Log.d("mylog", name);
         Log.d("mylog", weight);
         if (nameList.contains(name)){
             for (int i = 0; i < nameList.size(); i++) {
                 if (nameList.get(i).toString().equals(name) && weightList.get(i).toString().equals(weight)){
                     Button button = (Button) view;
-                    Drawable icon = context.getResources().getDrawable(R.drawable.item_unselected);
+                    Drawable icon = context.getResources().getDrawable(R.drawable.ic_item_unselected);
                     button.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null);
                     Log.d("mylog", "remove btn");
                     view = button;
@@ -97,7 +91,7 @@ public class OneDayPlan {
                 }
             }
         } else {
-            Drawable icon = context.getResources().getDrawable(R.drawable.item_selected);
+            Drawable icon = context.getResources().getDrawable(R.drawable.ic_item_selected);
             Button button = (Button) view;
             button.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null);
             view = button;

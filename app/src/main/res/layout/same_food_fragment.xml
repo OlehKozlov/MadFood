@@ -17,7 +17,7 @@
             android:weightSum="3">
 
             <TextView
-                android:id="@+id/sameFoodTitle"
+                android:id="@+id/text_same_food_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -26,7 +26,7 @@
                 android:textSize="22sp" />
 
             <EditText
-                android:id="@+id/sameFoodWeightEditText"
+                android:id="@+id/edit_same_food_weight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -47,11 +47,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Calories:"
+                android:text="@string/calories"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/sameFoodCalories"
+                android:id="@+id/text_same_food_calories"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -69,11 +69,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Fats:"
+                android:text="@string/fats"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/sameFoodFat"
+                android:id="@+id/text_same_food_fat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -91,11 +91,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Carbonates:"
+                android:text="@string/carbonates"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/sameFoodCarbonates"
+                android:id="@+id/text_same_food_carbonates"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -113,11 +113,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Proteins:"
+                android:text="@string/proteins"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/sameFoodProteins"
+                android:id="@+id/text_same_food_proteins"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -135,11 +135,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="GI:"
+                android:text="@string/gi"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/sameFoodGI"
+                android:id="@+id/text_same_food_gi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -154,21 +154,21 @@
             android:weightSum="2">
 
             <Button
-                android:id="@+id/sameFoodButtonAddToPlan"
+                android:id="@+id/button_same_food_add_to_plan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/button_style"
                 android:onClick=""
-                android:text="Add to plan" />
+                android:text="@string/add_to_plan" />
 
             <Button
-                android:id="@+id/sameFoodButtonCancel"
+                android:id="@+id/button_same_food_cancel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/button_style"
-                android:text="Cancel" />
+                android:text="@string/cancel" />
         </LinearLayout>
     </LinearLayout>
 

@@ -1,6 +1,5 @@
 package ua.kozlov.madfood;
 
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,28 +14,27 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
 import java.util.ArrayList;
 
 public class GroupsFragment extends Fragment {
-    Groups groups;
-    ListView listView;
-    SharedPreferences sPref;
+    private Groups mGroups;
+    private ListView mListView;
+    private SharedPreferences mSPref;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.groups_fragment, container, false);
-        groups = new Groups();
-        listView = (ListView) view.findViewById(R.id.groupsListView);
-        final ArrayList<String> groupList = groups.getGroupsList(view.getContext());
+        mGroups = new Groups();
+        mListView = (ListView) view.findViewById(R.id.list_view_groups);
+        final ArrayList<String> groupList = mGroups.getGroupsList(view.getContext());
         ArrayAdapter<String> adapter = new ArrayAdapter<>(view.getContext(), R.layout.group_list_item, groupList);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mListView.setAdapter(adapter);
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                sPref = view.getContext().getSharedPreferences("FoodGroup", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sPref.edit();
+                mSPref = view.getContext().getSharedPreferences("FoodGroup", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = mSPref.edit();
                 editor.putString("group", groupList.get(position).toString());
                 editor.commit();
                 Log.d("mylog", groupList.get(position).toString());

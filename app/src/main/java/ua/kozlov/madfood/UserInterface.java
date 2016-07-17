@@ -1,8 +1,6 @@
 package ua.kozlov.madfood;
 
-
 import android.content.Context;
-
 import java.util.ArrayList;
 import java.util.Map;
 

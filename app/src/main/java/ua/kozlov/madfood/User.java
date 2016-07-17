@@ -1,25 +1,23 @@
 package ua.kozlov.madfood;
 
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
 public class User implements UserInterface {
-    DBHealper dbHealper;
-    SQLiteDatabase db;
+    private DBHealper dbHealper;
+    private SQLiteDatabase db;
 
     public User() {
     }
 
     @Override
-    public void setUserName(String name, Context context) {
+    public void setUserName(final String name, Context context) {
         dbHealper = new DBHealper(context);
         db = dbHealper.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -46,7 +44,7 @@ public class User implements UserInterface {
     }
 
     @Override
-    public void setUserWeight(float weight, Context context) {
+    public void setUserWeight(final float weight, Context context) {
         dbHealper = new DBHealper(context);
         db = dbHealper.getWritableDatabase();
         Calendar calendar = Calendar.getInstance();
@@ -80,7 +78,6 @@ public class User implements UserInterface {
     public ArrayList<Map<String, Float>> getUserEveryWeights(Context context) {
         dbHealper = new DBHealper(context);
         db = dbHealper.getReadableDatabase();
-        //ArrayList<Float> weightList = new ArrayList<>();
         ArrayList<Map<String, Float>> weightList = new ArrayList<>();
         Cursor c = db.query("userWeightTable", null, null, null, null, null, null);
         while (c.moveToNext()) {
@@ -89,7 +86,6 @@ public class User implements UserInterface {
             Map<String, Float> map = new HashMap<>();
             map.put(c.getString(dateColIndex), c.getFloat(weightColIndex));
             weightList.add(map);
-            // weightList.add(c.getFloat(weightColIndex));
         }
         c.close();
         db.close();

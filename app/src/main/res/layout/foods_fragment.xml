@@ -4,8 +4,8 @@
     android:layout_height="match_parent">
 
     <ListView
-        android:id="@+id/foodsListView"
+        android:id="@+id/listview_foods"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>

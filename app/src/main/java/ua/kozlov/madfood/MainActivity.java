@@ -1,13 +1,8 @@
 package ua.kozlov.madfood;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -23,7 +18,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private FragmentManager fragmentManager;
+    private FragmentManager mFragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,16 +26,14 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        fragmentManager = getSupportFragmentManager();
+        mFragmentManager = getSupportFragmentManager();
         replaceFragmentToPlan();
     }
 
@@ -66,13 +59,11 @@ public class MainActivity extends AppCompatActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
+        final int id = item.getItemId();
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -82,14 +73,14 @@ public class MainActivity extends AppCompatActivity
         switch (item.getItemId()) {
             case R.id.mainMenuProfileButton: {
                 UserFragment fragment = new UserFragment();
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                FragmentTransaction transaction = mFragmentManager.beginTransaction();
                 transaction.replace(R.id.mainContainer, fragment);
                 transaction.commit();
                 break;
             }
             case R.id.mainFoodsButton: {
                 GroupsFragment fragment = new GroupsFragment();
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                FragmentTransaction transaction = mFragmentManager.beginTransaction();
                 transaction.replace(R.id.mainContainer, fragment).addToBackStack(null);
                 transaction.commit();
                 break;
@@ -100,33 +91,18 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void replaceFragmentToPlan(){
+    private void replaceFragmentToPlan() {
         OnewDayPlanFragment onewDayPlanFragment = new OnewDayPlanFragment();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        FragmentTransaction transaction = mFragmentManager.beginTransaction();
         transaction.replace(R.id.mainContainer, onewDayPlanFragment).addToBackStack(null);
         transaction.commit();
     }
 
-    protected void onUserFragmentButtonClick(View view) {
-        switch (view.getId()) {
-            case R.id.userFragmentButtonOK: {
-                UserFragment fragment = new UserFragment();
-                fragment.setData(this);
-                break;
-            }
-            case R.id.userFragmentButtonCansel: {
-                break;
-            }
-        }
-    }
-
-    public void onOneDayPlanFoodButtonClick(View view){
+    public void onOneDayPlanFoodButtonClick(View view) {
         OneDayPlan oneDayPlan = new OneDayPlan();
         Button button = (Button) view;
         LinearLayout llt = (LinearLayout) button.getParent();
-        TextView weightText = (TextView) llt.findViewById(R.id.oneDayPlanListText);
-
+        TextView weightText = (TextView) llt.findViewById(R.id.text_one_day_plan);
         view = oneDayPlan.setChoosenFoods(view, button.getText().toString(), weightText.getText().toString(), this);
     }
-
 }
