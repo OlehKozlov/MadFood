@@ -1,3 +1,21 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ToDo
+ @OlehKozlov
+ Watch 107
+  Star 1,879
+  Fork 470 gabrielemariotti/RecyclerViewItemAnimators  
+ Code  Issues 6  Pull requests 0
+ Boards  Burndown  Wiki  Pulse  Graphs
+Branch: master Find file Copy pathRecyclerViewItemAnimators/gradlew
+e80ab1b  on 20 Nov 2015
+@gabrielemariotti gabrielemariotti gradlew permission access for travis
+1 contributor
+RawBlameHistory     Executable File  165 lines (144 sloc)  4.96 KB
 #!/usr/bin/env bash
 
 ##############################################################################
@@ -160,3 +178,6 @@ eval splitJvmOpts $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS
 JVM_OPTS[${#JVM_OPTS[*]}]="-Dorg.gradle.appname=$APP_BASE_NAME"
 
 exec "$JAVACMD" "${JVM_OPTS[@]}" -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Status Help
+Sign in now to use ZenHub
