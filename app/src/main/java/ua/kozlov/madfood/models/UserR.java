@@ -4,6 +4,9 @@ import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
 public class UserR extends RealmObject {
+   // public static final String NAME_FIELD = "name";
+  //  public static final String WIEIGHT_FIELD = "weight";
+//    public static final String DATE_FIELD = "date";
     @PrimaryKey
     private String name;
     private float weight;

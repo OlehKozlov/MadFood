@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
-import ua.kozlov.madfood.MyApp;
 
 public class DatabaseConfigurator {
     private static final int SCHEMA_VERSION = 1;
@@ -20,7 +19,8 @@ public class DatabaseConfigurator {
     }
 
     @NonNull
-    private static RealmConfiguration getConfiguration(@NonNull final Context context) {
+    public static RealmConfiguration getConfiguration(@NonNull final Context context) {
+
         return new RealmConfiguration.Builder(context).name(REALM_NAME)
                 .schemaVersion(SCHEMA_VERSION).build();
 
