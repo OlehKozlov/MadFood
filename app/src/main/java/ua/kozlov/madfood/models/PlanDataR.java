@@ -3,7 +3,8 @@ package ua.kozlov.madfood.models;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
-public class PlanDataR extends RealmObject{
+public class PlanDataR extends RealmObject {
+
     @PrimaryKey
     private String date;
     private String foodName;

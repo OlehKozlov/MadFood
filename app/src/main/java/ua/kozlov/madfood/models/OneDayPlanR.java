@@ -4,6 +4,7 @@ import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
 public class OneDayPlanR extends RealmObject{
+
     private String foodName;
     private String foodWeight;
     private String calories;

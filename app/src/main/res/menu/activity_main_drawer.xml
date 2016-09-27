@@ -2,15 +2,42 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-
-
-
+        <item
+            android:id="@+id/profile_item"
+            android:title="@string/profile_item" />
+        <item
+            android:id="@+id/foods_item"
+            android:title="@string/foods_item" />
+        <item
+            android:id="@+id/planning_item"
+            android:title="@string/planning_item" />
+        <item
+            android:id="@+id/statistic_item"
+            android:title="@string/statistic_item" />
+        <item
+            android:id="@+id/calendar_item"
+            android:title="@string/calendar_item" />
+        <item
+            android:id="@+id/calculate_item"
+            android:title="@string/calculate_item" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="">
         <menu>
-
+            <item
+                android:id="@+id/share_item"
+                android:title="@string/share_item" />
+            <item
+                android:id="@+id/conversation_item"
+                android:title="@string/join_the_conversation_item" />
+            <item
+                android:id="@+id/settings_item"
+                android:title="@string/action_settings" />
+            <item
+                android:id="@+id/exit_item"
+                android:title="Exit" />
         </menu>
     </item>
+
 
 </menu>

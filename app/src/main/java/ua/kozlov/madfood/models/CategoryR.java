@@ -5,7 +5,6 @@ import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.Required;
 
 public class CategoryR extends RealmObject {
-   // public static final String NAME_FIELD = "name";
 
     @PrimaryKey
     @Required

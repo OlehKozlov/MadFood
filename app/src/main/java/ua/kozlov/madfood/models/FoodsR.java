@@ -5,11 +5,10 @@ import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.Required;
 
 public class FoodsR extends RealmObject {
-  //  public static final String ID_FIELD = "id";
 
     @PrimaryKey
     private int id;
-    public String category;
+    private String category;
     @Required
     private String foodName;
     private float calories;
@@ -21,9 +20,9 @@ public class FoodsR extends RealmObject {
     public FoodsR() {
     }
 
-    public FoodsR(int id, String category,
-                  String foodName, float calories,
-                  float fat, float carbonates, float proteins, float gi) {
+    public FoodsR(int id, String category, String foodName,
+                  float calories, float fat, float carbonates,
+                  float proteins, float gi) {
         this.id = id;
         this.category = category;
         this.foodName = foodName;

@@ -3,6 +3,7 @@ package ua.kozlov.madfood.models;
 import io.realm.RealmObject;
 
 public class FavoriteFoodsR extends RealmObject {
+
     private String foodName;
     private int count;
 
@@ -30,3 +31,4 @@ public class FavoriteFoodsR extends RealmObject {
         this.count = count;
     }
 }
+

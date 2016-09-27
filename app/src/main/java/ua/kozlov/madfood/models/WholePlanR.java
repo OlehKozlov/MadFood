@@ -95,3 +95,4 @@ public class WholePlanR extends RealmObject {
         this.date = date;
     }
 }
+
