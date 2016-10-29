@@ -1,6 +1,5 @@
 package ua.kozlov.madfood.utils;
 
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -9,11 +8,9 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
-
-import java.util.List;
-
 import ua.kozlov.madfood.models.FoodsR;
-import ua.kozlov.madfood.utils.DebugLogger;
+import ua.kozlov.madfood.models.OneDayPlanR;
+import ua.kozlov.madfood.models.PlanDataR;
 
 public final class CircleView extends View{
     private float vHeight;
@@ -34,7 +31,12 @@ public final class CircleView extends View{
     private float small;
     private float one;
     private Paint paint;
-    private FoodsR foodsR;
+    //private FoodsR foodsR;
+    private float calories;
+    private float fats;
+    private float carbonates;
+    private float proteins;
+    private float gi;
 
     public CircleView(Context context) {
         super(context);
@@ -68,35 +70,57 @@ public final class CircleView extends View{
         small = diametr*0.1f;
         one = (radius-small);
         drawWhiteCircle(radius, canvas);
-        if(foodsR != null) {
-            float total = foodsR.getCalories() + foodsR.getFat() + foodsR.getCarbonates() +
-                    foodsR.getProteins() + foodsR.getGi();
-            angle  = (turnover / total) * foodsR.getCalories();
-            DebugLogger.log("start: " + start + "\n" + "angle: " + angle);
+        //if(foodsR != null) {
+            float total = calories + fats + carbonates +
+                    proteins + gi;
+            angle  = (turnover / total) * calories;
+            //DebugLogger.log("start: " + start + "\n" + "angle: " + angle);
             drawSector(start, angle, radius , Color.RED, canvas);
             start += angle;
-            angle  = (turnover / total) * foodsR.getFat();
-            DebugLogger.log("start: " + start + "\n" + "angle: " + angle);
+            angle  = (turnover / total) * fats;
+           // DebugLogger.log("start: " + start + "\n" + "angle: " + angle);
             drawSector(start, angle, radius, Color.GREEN, canvas);
             start += angle;
-            angle  = (turnover / total) * foodsR.getCarbonates();
-            DebugLogger.log("start: " + start + "\n" + "angle: " + angle);
+            angle  = (turnover / total) * carbonates;
+           // DebugLogger.log("start: " + start + "\n" + "angle: " + angle);
             drawSector(start, angle, radius, Color.BLUE, canvas);
             start += angle;
-            angle  = (turnover / total) * foodsR.getProteins();
-            DebugLogger.log("start: " + start + "\n" + "angle: " + angle);
+            angle  = (turnover / total) * proteins;
+            //DebugLogger.log("start: " + start + "\n" + "angle: " + angle);
             drawSector(start, angle, radius, Color.MAGENTA, canvas);
             start += angle;
-            angle  = (turnover / total) * foodsR.getGi();
-            DebugLogger.log("start: " + start + "\n" + "angle: " + angle);
+            angle  = (turnover / total) * gi;
+            //DebugLogger.log("start: " + start + "\n" + "angle: " + angle);
             drawSector(start, angle, radius, Color.YELLOW, canvas);
-        }
+        //}
         drawWhiteCircle(radius * 0.8f,canvas);
     }
 
-    public void setValues(FoodsR foodsR) {
+    public void setValues(FoodsR foods) {
         init();
-        this.foodsR = foodsR;
+        calories = foods.getCalories();
+        fats = foods.getFat();
+        carbonates = foods.getCarbonates();
+        proteins = foods.getProteins();
+        gi = foods.getGi();
+    }
+
+    public void setValues(OneDayPlanR foods) {
+        init();
+        calories = Float.parseFloat(foods.getCalories());
+        fats = Float.parseFloat(foods.getFat());
+        carbonates = Float.parseFloat(foods.getCarbonates());
+        proteins = Float.parseFloat(foods.getProteins());
+        gi = Float.parseFloat(foods.getGi());
+    }
+
+    public void setValues(PlanDataR foods) {
+        init();
+        calories = Float.parseFloat(foods.getCalories());
+        fats = Float.parseFloat(foods.getFat());
+        carbonates = Float.parseFloat(foods.getCarbonates());
+        proteins = Float.parseFloat(foods.getProteins());
+        gi = Float.parseFloat(foods.getGi());
     }
 
     private void drawWhiteCircle(float radius, Canvas canvas) {
@@ -111,28 +135,6 @@ public final class CircleView extends View{
         paint.setColor(color);
         arc.set(centerX - radius, centerY - radius, centerX + radius, centerY + radius);
         canvas.drawArc(arc, start, angle, true, paint);
-    }
-
-    private void drawTextByAngle(String text,float angle, Canvas canvas) {
-        text = text.toUpperCase();
-        Rect bounds = new Rect();
-        paint.setColor(Color.WHITE);
-        paint.setShadowLayer(2, 0, 0, Color.GRAY);
-        paint.setStyle(Paint.Style.FILL);
-        canvas.save();
-        paint.getTextBounds(text, 0, text.length()-1, bounds);
-        if(rightAngle <= angle && angle < threeQuarter) {
-            canvas.rotate(angle, centerX, centerY);
-            canvas.rotate(reverse, (centerX + radius), centerY);
-            if(bounds.width() > radius)
-                canvas.drawText(text, centerX + bounds.width()/2, centerY + bounds.height()/2, paint);
-            else
-                canvas.drawText(text, centerX + radius + radius * 0.1f, centerY + bounds.height()/2, paint);
-        } else {
-            canvas.rotate(angle, centerX, centerY);
-            canvas.drawText(text, centerX + small + radius * 0.1f, centerY +  bounds.height()/2, paint);
-        }
-        canvas.restore();
     }
 
 }

@@ -12,15 +12,16 @@ public class OneDayPlanR extends RealmObject{
     private String carbonates;
     private String proteins;
     private String gi;
+    private float progress;
     @PrimaryKey
-    private String date;
+    private long date;
 
     public OneDayPlanR() {
     }
 
-    public OneDayPlanR(String foodName, String foodWeight,
-                       String calories, String fat, String carbonates,
-                       String proteins, String gi, String date) {
+    public OneDayPlanR(String foodName, String foodWeight, String calories,
+                       String fat, String carbonates, String proteins,
+                       String gi, float progress, long date) {
         this.foodName = foodName;
         this.foodWeight = foodWeight;
         this.calories = calories;
@@ -28,6 +29,7 @@ public class OneDayPlanR extends RealmObject{
         this.carbonates = carbonates;
         this.proteins = proteins;
         this.gi = gi;
+        this.progress = progress;
         this.date = date;
     }
 
@@ -87,11 +89,19 @@ public class OneDayPlanR extends RealmObject{
         this.gi = gi;
     }
 
-    public String getDate() {
+    public float getProgress() {
+        return progress;
+    }
+
+    public void setProgress(float progress) {
+        this.progress = progress;
+    }
+
+    public long getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(long date) {
         this.date = date;
     }
 }

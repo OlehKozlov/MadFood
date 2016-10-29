@@ -5,17 +5,21 @@ import io.realm.annotations.PrimaryKey;
 
 public class UserR extends RealmObject {
 
-    @PrimaryKey
     private String name;
     private float weight;
+    private float height;
+    private int plan;
+    @PrimaryKey
     private String date;
 
     public UserR() {
     }
 
-    public UserR(String name, float weight, String date) {
+    public UserR(String name, float weight, float height, int plan, String date) {
         this.name = name;
         this.weight = weight;
+        this.height = height;
+        this.plan = plan;
         this.date = date;
     }
 
@@ -33,6 +37,22 @@ public class UserR extends RealmObject {
 
     public void setWeight(float weight) {
         this.weight = weight;
+    }
+
+    public float getHeight() {
+        return height;
+    }
+
+    public void setHeight(float height) {
+        this.height = height;
+    }
+
+    public int getPlan() {
+        return plan;
+    }
+
+    public void setPlan(int plan) {
+        this.plan = plan;
     }
 
     public String getDate() {

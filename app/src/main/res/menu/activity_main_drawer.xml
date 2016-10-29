@@ -18,26 +18,11 @@
             android:id="@+id/calendar_item"
             android:title="@string/calendar_item" />
         <item
-            android:id="@+id/calculate_item"
-            android:title="@string/calculate_item" />
+            android:id="@+id/exit_item"
+            android:title="Exit" />
     </group>
 
-    <item android:title="">
-        <menu>
-            <item
-                android:id="@+id/share_item"
-                android:title="@string/share_item" />
-            <item
-                android:id="@+id/conversation_item"
-                android:title="@string/join_the_conversation_item" />
-            <item
-                android:id="@+id/settings_item"
-                android:title="@string/action_settings" />
-            <item
-                android:id="@+id/exit_item"
-                android:title="Exit" />
-        </menu>
-    </item>
+
 
 
 </menu>

@@ -5,25 +5,31 @@ import io.realm.annotations.PrimaryKey;
 
 public class PlanDataR extends RealmObject {
 
-    @PrimaryKey
-    private String date;
     private String foodName;
-    private int weight;
+    private String foodWeight;
+    private String calories;
+    private String fat;
+    private String carbonates;
+    private String proteins;
+    private String gi;
+    private float progress;
+    @PrimaryKey
+    private long date;
 
     public PlanDataR() {
     }
 
-    public PlanDataR(String date, String foodName, int weight) {
-        this.date = date;
+    public PlanDataR(String foodName, String foodWeight, String calories,
+                     String fat, String carbonates, String proteins,
+                     String gi, float progress, long date) {
         this.foodName = foodName;
-        this.weight = weight;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
+        this.foodWeight = foodWeight;
+        this.calories = calories;
+        this.fat = fat;
+        this.carbonates = carbonates;
+        this.proteins = proteins;
+        this.gi = gi;
+        this.progress = progress;
         this.date = date;
     }
 
@@ -35,11 +41,67 @@ public class PlanDataR extends RealmObject {
         this.foodName = foodName;
     }
 
-    public int getWeight() {
-        return weight;
+    public String getFoodWeight() {
+        return foodWeight;
     }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
+    public void setFoodWeight(String foodWeight) {
+        this.foodWeight = foodWeight;
+    }
+
+    public String getCalories() {
+        return calories;
+    }
+
+    public void setCalories(String calories) {
+        this.calories = calories;
+    }
+
+    public String getFat() {
+        return fat;
+    }
+
+    public void setFat(String fat) {
+        this.fat = fat;
+    }
+
+    public String getCarbonates() {
+        return carbonates;
+    }
+
+    public void setCarbonates(String carbonates) {
+        this.carbonates = carbonates;
+    }
+
+    public String getProteins() {
+        return proteins;
+    }
+
+    public void setProteins(String proteins) {
+        this.proteins = proteins;
+    }
+
+    public String getGi() {
+        return gi;
+    }
+
+    public void setGi(String gi) {
+        this.gi = gi;
+    }
+
+    public float getProgress() {
+        return progress;
+    }
+
+    public void setProgress(float progress) {
+        this.progress = progress;
+    }
+
+    public long getDate() {
+        return date;
+    }
+
+    public void setDate(long date) {
+        this.date = date;
     }
 }

@@ -5,22 +5,19 @@
     android:background="@color/primary"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainImage"
+        android:background="@drawable/mad_food_picture"/>
+
     <TextView
         android:id="@+id/textHeaderTitle"
         style="@style/Title1Style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Title1" />
-
-    <TextView
-        android:id="@+id/textHeaderSecondTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textHeaderTitle"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="5dp"
-        android:text="Title2"
-        android:textSize="18sp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:text="Mad Food" />
 
 </RelativeLayout>

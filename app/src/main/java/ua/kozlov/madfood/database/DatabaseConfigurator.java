@@ -1,6 +1,5 @@
 package ua.kozlov.madfood.database;
 
-
 import android.content.Context;
 import android.support.annotation.NonNull;
 
@@ -20,9 +19,7 @@ public class DatabaseConfigurator {
 
     @NonNull
     public static RealmConfiguration getConfiguration(@NonNull final Context context) {
-
         return new RealmConfiguration.Builder(context).name(REALM_NAME)
                 .schemaVersion(SCHEMA_VERSION).build();
-
     }
 }

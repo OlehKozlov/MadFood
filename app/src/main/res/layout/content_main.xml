@@ -9,8 +9,9 @@
     tools:showIn="@layout/app_bar_main">
 
     <FrameLayout
+        android:id="@+id/mainContainer"
+        android:background="@drawable/fragment_background"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/mainContainer"></FrameLayout>
+        android:layout_height="match_parent"></FrameLayout>
 
 </RelativeLayout>
