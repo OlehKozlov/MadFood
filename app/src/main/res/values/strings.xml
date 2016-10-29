@@ -3,49 +3,77 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Settings</string>
-    <string name="vegetables">Vegetables</string>
-    <string name="baked_products">Baked products</string>
-    <string name="beverages_nonalcoholic">Beverages nonalcoholic</string>
-    <string name="bread_flour_products">Bread flour products</string>
-    <string name="cannedfish_seafoods">Cannedfish, seafoods</string>
-    <string name="cannedfruits_vegetables_mushrooms">Cannedfruits, vegetables, mushrooms</string>
-    <string name="cannedeat_products">Cannedeat products</string>
-    <string name="cerealgrains_cereals_flakes">Cerealgrains, cereals, flakes</string>
-    <string name="cerealgrains_cooked">Cerealgrains cooked</string>
-    <string name="fastfoods">Fastfoods</string>
-    <string name="fish_seafoods">Fish, seafoods</string>
-    <string name="fruits">Fruits</string>
-    <string name="fruitsdried">Fruitsdried</string>
-    <string name="icecream">Icecream</string>
-    <string name="jams">Jams</string>
-    <string name="legumes">Legumes</string>
-    <string name="meels_entrees_sidedishes">Meels entrees sidedishes</string>
-    <string name="meats_byproducts">Meats, byproducts</string>
-    <string name="mushrooms">Mushrooms</string>
-    <string name="nut_and_seed_products">Nut and seed products</string>
-    <string name="oils_fats">Oils, fats</string>
-    <string name="poultry_products">Poultry products</string>
-    <string name="sausages">Sausages</string>
-    <string name="snacks">Snacks</string>
-    <string name="soups_gravies">Soups gravies</string>
-    <string name="soy_products">Soy products</string>
-    <string name="sushi">Sushi</string>
-    <string name="sweets_desserts">Sweets desserts</string>
+
+    <!--Main drawer menu items-->
+    <string name="foods_item">Foods</string>
+    <string name="profile_item">Profile</string>
+    <string name="planning_item">Planning</string>
+    <string name="statistic_item">Statistic</string>
+    <string name="calendar_item">Calendar</string>
+    <string name="calculate_item">Calculate</string>
+    <string name="share_item">Share</string>
+    <string name="join_the_conversation_item">Join the conversation</string>
+
+    <!--Dialogs strings-->
+    <string name="categories_name">Enter the categories name</string>
+    <string name="foods_name">Enter the foods name</string>
+    <string name="food_name">Food name</string>
+    <string name="category">Category</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="default_food_name">My food</string>
+    <string name="default_number_value">1</string>
+
+    <!--SharedPreferences strings-->
+    <string name="shared_date">date</string>
+    <string name="shared_category">category</string>
+    <string name="shared_food">food</string>
+    <string name="shared_prefs_name">Launch</string>
+    <string name="shared_date_settings">date</string>
+    <string name="shared_time_settings">Time</string>
+    <string name="shared_launch_settings">first_launch</string>
+    <string name="shared_personal_information">personal information</string>
+
+    <!--DebugLogger strings-->
+    <string name="log_food_name">"FoodName: "</string>
+    <string name="log_first_launch">First time launch</string>
+    <string name="log_second_launch">Second time launch</string>
+    <string name="log_database_copied">Database copied</string>
+    <string name="log_day">"Day: "</string>
+    <string name="log_hour">"Hour: "</string>
+    <string name="log_settings_day">"Settings day: "</string>
+    <string name="log_main_fragment_onvreate">MainFragment onCreateView</string>
+    <string name="log_data_changed">Data changed</string>
+    <string name="log_result_size">"Results size: "</string>
+    <string name="log_data_saved">Data saved</string>
+    <string name="log_progress">"Progress: "</string>
+    <string name="log_cal_click">Calories button click</string>
+    <string name="log_fat_click">Fats button click</string>
+    <string name="log_carb_click">Carbonates button click</string>
+    <string name="log_prot_click">Proteins button click</string>
+    <string name="log_gi_click">GIs button click</string>
+    <string name="log_weight_click">Weight button click</string>
+    <string name="log_day_click">Days button click</string>
+    <string name="log_week_click">Weeks button click</string>
+    <string name="log_month_click">Months button click</string>
+    <string name="log_realm_closed">Realm closed</string>
+
+    <!--Profile menu strings-->
+    <string name="hint_user_weight">Enter your weight!</string>
+    <string name="hint_user_calories">Calories per day</string>
+    <string name="hint_user_name">Your name</string>
+    <string name="hint_user_height">Your height</string>
+
+    <!--Food strings-->
+    <string name="food_default_weight">100</string>
     <string name="calories">Calories</string>
     <string name="fats">Fats</string>
     <string name="carbonates">Carbonates</string>
     <string name="proteins">Proteins</string>
     <string name="gi">GI</string>
-    <string name="add_to_plan">Add to plan</string>
-    <string name="cancel">Cancel</string>
-    <string name="set_your_name">Set your name</string>
-    <string name="set_your_weight_55_8">Set your weight (55.8)</string>
-    <string name="ok">OK</string>
-    <string name="android_studio">Android Studio</string>
-    <string name="android_studio_android_com">android.studio@android.com</string>
-    <string name="add">Add</string>
-    <string name="delete">Delete</string>
+    <string name="weight">Weight</string>
+    <string name="toast_profile_information">Please, enter the profile informations before other actions!!!</string>
+
 
 </resources>

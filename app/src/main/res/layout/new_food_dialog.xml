@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/icons"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editFoodNameDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:hint="@string/food_name"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/editCaloriesDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="Calories"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/editFatsDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="Fats"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/editCarbonatesDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="Carbonates"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/editProteinsDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="Proteins"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/editGiDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="GI"
+            android:inputType="numberDecimal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/buttonFoodDialogOk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/button_style"
+                android:text="@string/ok" />
+
+            <Button
+                android:id="@+id/buttonFoodDialogCancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/button_style"
+                android:text="@string/cancel" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

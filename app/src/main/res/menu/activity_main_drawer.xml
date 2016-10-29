@@ -3,16 +3,26 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/mainMenuProfileButton"
-            android:title="Profile" />
-
-
+            android:id="@+id/profile_item"
+            android:title="@string/profile_item" />
+        <item
+            android:id="@+id/foods_item"
+            android:title="@string/foods_item" />
+        <item
+            android:id="@+id/planning_item"
+            android:title="@string/planning_item" />
+        <item
+            android:id="@+id/statistic_item"
+            android:title="@string/statistic_item" />
+        <item
+            android:id="@+id/calendar_item"
+            android:title="@string/calendar_item" />
+        <item
+            android:id="@+id/exit_item"
+            android:title="Exit" />
     </group>
 
-    <item android:title="Communicate">
-        <menu>
 
-        </menu>
-    </item>
+
 
 </menu>
